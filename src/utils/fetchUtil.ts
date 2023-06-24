@@ -38,7 +38,7 @@ interface PokemonResponse {
     results: PokemonList[]
 }
 
-export const fetchFirst100Pokemon = async () => {
+export const fetchPokemonList = async () => {
     try {
         const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
         const data: PokemonResponse = await response.json();
@@ -51,5 +51,16 @@ export const fetchFirst100Pokemon = async () => {
     } catch (error) {
         console.error("Error:", error);
         return [];
+    }
+}
+
+export const fetchPokemonById = async (id: number) => {
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        const data: Pokemon = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error:", error);
+        return {} as Pokemon;
     }
 }

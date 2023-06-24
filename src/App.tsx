@@ -1,7 +1,8 @@
+import { PokemonProvider } from "./context/ContextProvider";
 import { createRouter } from "./router/RouterProvider";
 
 function App() {
-  return createRouter();
+  return <PokemonProvider>{createRouter()}</PokemonProvider>;
 }
 
 export default App;
