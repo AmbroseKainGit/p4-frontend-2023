@@ -9,7 +9,7 @@ export interface Pokemon {
     game_indices: [];
     height: number;
     held_items: [];
-    id: number;
+    id: number | string;
     is_default: boolean;
     location_area_encounters: string;
     moves: [];
@@ -54,7 +54,7 @@ export const fetchPokemonList = async () => {
     }
 }
 
-export const fetchPokemonById = async (id: number) => {
+export const fetchPokemonById = async (id: string) => {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
         const data: Pokemon = await response.json();
