@@ -4,10 +4,10 @@ import { PokemonContext } from "../context/ContextProvider";
 const Home = () => {
   const { pokemonListCopy } = useContext(PokemonContext);
   return (
-    <>
+    <div className="h-full bg-[#C97D60] overflow-y-scroll">
       {(pokemonListCopy && pokemonListCopy.length > 0) && (
         <div
-          className="grid grid-cols-9 gap-4 pt-10 bg-[#C97D60] w-full"
+          className="grid grid-cols-9 gap-4 pt-10 w-full"
           id="container"
         >
           {pokemonListCopy.map((pokemon) => (
@@ -15,7 +15,7 @@ const Home = () => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
