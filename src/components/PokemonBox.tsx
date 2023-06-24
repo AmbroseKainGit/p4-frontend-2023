@@ -9,7 +9,7 @@ const PokemonBox: React.FC<Pokemon> = ({ name, sprites, id }) => {
     navigate(`/${id}`);
   };
   return (
-    <div className="flex w-30 h-40 items-center flex-col  ">
+    <div className="flex w-30 h-44 items-center flex-col">
       <h1 className="text-[#321325] text-xl capitalize">{name}</h1>
       <div
         className="w-40 h-40 cursor-pointer"
