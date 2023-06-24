@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import PokemonBox from "../components/PokemonBox";
-import { PokemonContext } from "../context/ContextProvider";
+import { usePokemonContext } from "../context/ContextProvider";
 const Home = () => {
-  const { pokemonListCopy, reset } = useContext(PokemonContext);
+  const { pokemonListCopy, reset } = usePokemonContext();
   useEffect(() => {
     reset();
   }, []);

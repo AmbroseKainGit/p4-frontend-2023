@@ -1,10 +1,10 @@
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Pokemon } from "../utils/fetchUtil";
-import { PokemonContext } from "../context/ContextProvider";
+import { usePokemonContext } from "../context/ContextProvider";
 
 const Detail = () => {
-  const { pokemonList } = useContext(PokemonContext);
+  const { pokemonList } = usePokemonContext();
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const params = useParams();
   useEffect(() => {

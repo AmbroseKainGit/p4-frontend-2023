@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, ReactNode } from "react";
+import React, { createContext, useEffect, useState, ReactNode, useContext } from "react";
 import { Pokemon, fetchPokemonList } from "../utils/fetchUtil";
 
 interface PokemonContextValue {
@@ -11,6 +11,8 @@ interface PokemonContextValue {
 interface Props {
   children: ReactNode;
 }
+
+export const usePokemonContext = () => useContext(PokemonContext);
 
 export const PokemonContext = createContext<PokemonContextValue>({
   pokemonList: [],
@@ -48,4 +50,5 @@ export const PokemonProvider: React.FC<Props> = ({ children }) => {
       {children}
     </PokemonContext.Provider>
   );
+
 };

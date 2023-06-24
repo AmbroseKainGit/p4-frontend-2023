@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
-import { PokemonContext } from "../context/ContextProvider";
+import { usePokemonContext } from "../context/ContextProvider";
 const Layout: React.FC = () => {
-  const { filterPokemon } = useContext(PokemonContext);
+  const { filterPokemon } = usePokemonContext();
   const location = useLocation();
   const navigate = useNavigate();
   const params = useParams();
