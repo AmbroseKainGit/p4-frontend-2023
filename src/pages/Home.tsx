@@ -5,6 +5,8 @@ const Home = () => {
   const { pokemonListCopy, reset } = usePokemonContext();
   useEffect(() => {
     reset();
+    // Im certain reset its not going to change so dont need it in the dependency array
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
