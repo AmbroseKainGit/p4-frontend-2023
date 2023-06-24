@@ -15,7 +15,7 @@ const Layout: React.FC = () => {
           <button
             type="button"
             className="absolute text-[#321325] w-10 h-10 flex justify-center items-center rounded-[50%] text-2xl bg-[#A6B1E1]"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate('/')}
           >
             &#8592;
           </button>
