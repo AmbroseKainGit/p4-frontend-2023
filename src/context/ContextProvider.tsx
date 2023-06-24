@@ -5,6 +5,7 @@ interface PokemonContextValue {
   pokemonList: Pokemon[];
   pokemonListCopy: Pokemon[];
   filterPokemon: (name: string) => void;
+  reset: () => void;
 }
 
 interface Props {
@@ -14,7 +15,8 @@ interface Props {
 export const PokemonContext = createContext<PokemonContextValue>({
   pokemonList: [],
   pokemonListCopy: [],
-  filterPokemon: () => []
+  filterPokemon: () => [],
+  reset: () => ({})
 });
 
 export const PokemonProvider: React.FC<Props> = ({ children }) => {
@@ -32,12 +34,17 @@ export const PokemonProvider: React.FC<Props> = ({ children }) => {
     );
     setPokemonListCopy(copy);
   };
+
+  const reset = () => {
+    setPokemonListCopy(pokemonList);
+  }
+
   useEffect(() => {
     getPokemonData();
   }, []);
 
   return (
-    <PokemonContext.Provider value={{ pokemonList, filterPokemon, pokemonListCopy }}>
+    <PokemonContext.Provider value={{ pokemonList, filterPokemon, pokemonListCopy, reset }}>
       {children}
     </PokemonContext.Provider>
   );

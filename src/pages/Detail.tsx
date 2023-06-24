@@ -23,7 +23,7 @@ const Detail = () => {
           {pokemon?.name}
         </h5>
         <div
-          className="w-40 h-40 cursor-pointer bg-center self-center"
+          className="w-40 h-40 bg-center self-center"
           style={{
             backgroundImage: `url(${pokemon?.sprites.front_shiny})`,
             transition: "background-image 0.3s ease"

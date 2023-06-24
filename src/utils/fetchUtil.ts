@@ -22,11 +22,6 @@ interface Types {
     }
 }
 
-// {pokemon?.types.map((type) => (
-//     <li className="list-disc" key={type?.type.name}>
-//       {type?.type.name}
-//     </li>
-//   ))}
 export interface Pokemon {
     abilities: [];
     base_experience: number;
