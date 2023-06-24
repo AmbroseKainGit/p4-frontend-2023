@@ -50,7 +50,7 @@ const Detail = () => {
               stats
             </h5>
             <ol className="dark:text-white capitalize">
-              {pokemon?.stats.map((stat, index) => (
+              {pokemon?.stats.map((stat) => (
                 <li key={stat.stat.name} className="list-disc">
                   {stat.stat.name} : {stat?.base_stat}
                 </li>
@@ -62,7 +62,7 @@ const Detail = () => {
               types
             </h5>
             <ol className="dark:text-white capitalize">
-              {pokemon?.types.map((type, index) => (
+              {pokemon?.types.map((type) => (
                 <li className="list-disc" key={type?.type.name}>
                   {type?.type.name}
                 </li>

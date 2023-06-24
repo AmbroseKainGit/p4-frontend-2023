@@ -2,6 +2,31 @@ interface PokemonList {
     name: string;
     url: string;
 }
+
+interface Moves {
+    move: {
+        name: string
+    }  
+}
+
+interface Stats {
+    base_stat: number;
+    stat: {
+        name: string
+    }
+}
+
+interface Types {
+    type: {
+        name: string
+    }
+}
+
+// {pokemon?.types.map((type) => (
+//     <li className="list-disc" key={type?.type.name}>
+//       {type?.type.name}
+//     </li>
+//   ))}
 export interface Pokemon {
     abilities: [];
     base_experience: number;
@@ -12,7 +37,7 @@ export interface Pokemon {
     id: number | string;
     is_default: boolean;
     location_area_encounters: string;
-    moves: [];
+    moves: Moves[];
     name: string;
     order: number;
     past_types: [];
@@ -27,8 +52,8 @@ export interface Pokemon {
         front_shiny: string | null
         front_shiny_female: string | null
     };
-    stats: []
-    types: []
+    stats: Stats[]
+    types: Types[]
     weight: number
 }
 interface PokemonResponse {
